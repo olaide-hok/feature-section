@@ -1,0 +1,178 @@
+@use "functions" as *;
+
+$color-1: #ea5454;
+$color-2: #44d3d2;
+$color-3: #fcae4a;
+$color-4: #549ef2;
+$color-5: #4d4f62;
+$color-6: #f2f2f2;
+$color-7: #fafafa;
+$color-8: #979797;
+$color-9: #dadae5;
+
+body {
+  background-color: $color-6;
+}
+
+.poppins-extralight {
+  color: $color-5;
+  font-family: "Poppins", serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: rem(24px);
+  letter-spacing: rem(0.17px);
+}
+
+.poppins-semibold {
+  color: $color-5;
+  font-family: "Poppins", serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: rem(24px);
+  letter-spacing: rem(0.17px);
+}
+
+.poppins-semibold-2 {
+  color: $color-5;
+  font-family: "Poppins", serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: rem(20px);
+  letter-spacing: rem(0px);
+}
+
+.poppins-regular {
+  color: $color-5;
+  font-family: "Poppins", serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: rem(15px);
+  line-height: rem(25px);
+  letter-spacing: rem(0.1px);
+}
+
+.poppins-regular-2 {
+  color: $color-5;
+  font-family: "Poppins", serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: rem(13px);
+  line-height: rem(23px);
+  letter-spacing: rem(0.09px);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 3.5rem;
+  padding: rem(80px) rem(24px);
+
+  .headline {
+    text-align: center;
+    h2:first-child {
+      margin-bottom: 1rem;
+    }
+
+    .copy {
+      margin-top: 1.5rem;
+    }
+  }
+
+  .cards {
+    display: grid;
+    gap: 1.5rem;
+
+    .supervisor {
+      border-top: 3.55px solid $color-2;
+    }
+
+    .team-builder {
+      border-top: 3.55px solid $color-1;
+    }
+
+    .karma {
+      border-top: 3.55px solid $color-3;
+    }
+
+    .calc {
+      border-top: 3.55px solid $color-4;
+    }
+
+    .supervisor,
+    .team-builder,
+    .karma,
+    .calc {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 10px 17px 16px $color-9;
+      padding: rem(32px);
+
+      h4 {
+        margin-bottom: rem(8px);
+      }
+      img {
+        margin-top: rem(72px);
+        float: right;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .poppins-extralight {
+    font-size: rem(36px);
+    letter-spacing: rem(0.25px);
+  }
+  .poppins-semibold {
+    font-size: rem(36px);
+    letter-spacing: rem(0.25px);
+  }
+  .container {
+    .cards {
+      grid-template-columns: repeat(3, 1fr);
+      .supervisor,
+      .team-builder,
+      .karma,
+      .calc {
+        width: rem(350px);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: rem(768px)) {
+  .container {
+    .headline {
+      max-width: rem(540px);
+    }
+    .cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media screen and (min-width: rem(1440)) {
+  .grid-row-span-2 {
+    grid-row: 1 / span 2;
+  }
+  .container {
+    .cards {
+      width: rem(1110px);
+
+      .supervisor,
+      .calc {
+        align-self: center;
+      }
+
+      .karma {
+        grid-column: 2;
+      }
+
+      .calc {
+        grid-column: 3;
+      }
+    }
+  }
+}
